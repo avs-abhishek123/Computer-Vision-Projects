@@ -26,6 +26,7 @@ class webcam_video_capture_class:
 
     def VideoCapture(self):
         """
+        opens web cam & displays the fps while capturing image
         """
         new_frame_time = 0
         prev_frame_time = 0
@@ -41,6 +42,8 @@ class webcam_video_capture_class:
                 Assigning a tuple to 1 var with 2 data items can sometimes be useful,
                 but in this instance, you should create 2 vars
                 and split the data into 2 variables to make it easier.
+
+                https://stackoverflow.com/questions/64692479/cv2-videocapture0-read-returns-false-none
             """
             success, img = cap.read()
 
@@ -49,7 +52,7 @@ class webcam_video_capture_class:
 
             fps, prev_frame_time = self.FPS(prev_frame_time)
 
-            print("FPS:",fps*10)
+            print("FPS:",fps)
 
             """
             Syntax: cv2.putText(image, text, org, font, fontScale, color[, thickness[, lineType[, bottomLeftOrigin]]])
