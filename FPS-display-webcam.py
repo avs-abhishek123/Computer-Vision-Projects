@@ -4,14 +4,24 @@ import time
 # allows working with video either by capturing via live webcam or by a video file
 cap = cv2.VideoCapture(0)
 pTime = 0
+
 """
 Syntax: cv2.putText(image, text, org, font, fontScale, color[, thickness[, lineType[, bottomLeftOrigin]]])
 
 Parameters:
-image: It is the image on which text is to be drawn.
+img: It is the image on which text is to be drawn.
 text: Text string to be drawn.
 org: It is the coordinates of the bottom-left corner of the text string in the image. The coordinates are represented as tuples of two values i.e. (X coordinate value, Y coordinate value).
-font: It denotes the font type. Some of font types are FONT_HERSHEY_SIMPLEX, FONT_HERSHEY_PLAIN, , etc.
+fontFace: It denotes the type of font you want to use. OpenCV supports only a subset of Hershey Fonts.
+    FONT_HERSHEY_SIMPLEX
+    FONT_HERSHEY_PLAIN
+    FONT_HERSHEY_DUPLEX
+    FONT_HERSHEY_COMPLEX
+    FONT_HERSHEY_TRIPLEX
+    FONT_HERSHEY_COMPLEX_SMALL
+    FONT_HERSHEY_SCRIPT_SIMPLEX
+    FONT_HERSHEY_SCRIPT_COMPLEX
+    FONT_ITALIC
 fontScale: Font scale factor that is multiplied by the font-specific base size.
 color: It is the color of text string to be drawn. For BGR, we pass a tuple. eg: (255, 0, 0) for blue color.
 thickness: It is the thickness of the line in px.
@@ -19,6 +29,8 @@ lineType: This is an optional parameter.It gives the type of the line to be used
 bottomLeftOrigin: This is an optional parameter. When it is true, the image data origin is at the bottom-left corner. Otherwise, it is at the top-left corner.
 
 Return Value: It returns an image.
+
+https://www.askpython.com/python-modules/opencv-puttext
 """
 
 while True:

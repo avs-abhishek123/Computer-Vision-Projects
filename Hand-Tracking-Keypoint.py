@@ -39,10 +39,11 @@ hands = mpHands.Hands(static_image_mode=False,
                       min_tracking_confidence=0.5)
 mpDraw = mp.solutions.drawing_utils
 
-pTime = 0
-cTime = 0
+
 
 while True:
+    pTime = time.time()
+    # cTime = 0
     success, img = cap.read()
     imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     results = hands.process(imgRGB)
