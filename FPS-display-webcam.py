@@ -26,8 +26,20 @@ while True:
     cTime = time.time()
     fps = 1 / (cTime - pTime)
     pTime = cTime
-    cv2.putText(img, f'Hand Tracking System', (10, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2 )
-    cv2.putText(img, f'FPS:{int(fps)}', (20, 100), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+    cv2.putText(img = img,
+                text = f'FPS Display',
+                org = (140, 40),
+                fontFace = cv2.FONT_HERSHEY_SIMPLEX,
+                fontScale = 1,
+                color = (255, 255, 255),
+                thickness = 2 )
+    cv2.putText(img = img,
+                text = f'FPS: {int(fps)}',
+                org = (20, 60),
+                fontFace = cv2.FONT_HERSHEY_PLAIN,
+                fontScale = 1,  
+                color = (255,0,255),
+                thickness = 1)
     cv2.imshow("Test", img)
     # Display Video and when 'q'
     # is entered, destroy the window
