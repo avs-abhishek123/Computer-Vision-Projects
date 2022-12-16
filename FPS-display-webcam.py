@@ -1,6 +1,7 @@
 import cv2
 import time
 
+# allows working with video either by capturing via live webcam or by a video file
 cap = cv2.VideoCapture(0)
 pTime = 0
 """
