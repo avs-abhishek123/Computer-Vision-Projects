@@ -10,5 +10,6 @@ while(cap.isOpened()):
     cv2.imwrite("output/videos2frames/"+'people'+str(i)+'.jpg',frame)
     i+=1
 
+# Releaase the VideoCapture and destroy all windows
 cap.release()
 cv2.destroyAllWindows()
