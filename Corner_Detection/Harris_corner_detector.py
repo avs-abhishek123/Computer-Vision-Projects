@@ -1,6 +1,8 @@
 import numpy as np
 import cv2
 
+# https://theailearner.com/2021/09/25/harris-corner-detection/
+
 # Load the image and convert to grayscale
 img = cv2.imread('images/chessboard.jpg')
 gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)

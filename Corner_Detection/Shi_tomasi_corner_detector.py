@@ -13,6 +13,8 @@ cv2.goodFeaturesToTrack(image, maxCorners, qualityLevel, minDistance, [,mask[,bl
 # useHarrisDetector - whether to use Shi-Tomasi or Harris Corner
 # k - Free parameter of the Harris detector
 
+https://theailearner.com/2021/09/27/shi-tomasi-corner-detector/
+
 """
 
 # Read the image and convert to greyscale
