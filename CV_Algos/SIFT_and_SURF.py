@@ -1,8 +1,14 @@
 # SURF (Speeded-Up Robust Features)
 # https://medium.com/data-breach/introduction-to-surf-speeded-up-robust-features-c7396d6e7c4e
 # sift and surf are patented, so use orb of openCV
+
+#  =========================================================================
+
 # scale-invariant feature transform (SIFT)
 # https://www.i2tutorials.com/what-are-sift-and-surf/
+
+#  =========================================================================
+
 # SIFT and SURF are patented so not free for commercial use, while ORB is free.
 # SIFT and SURF detect more features then ORB, but ORB is faster.
 
