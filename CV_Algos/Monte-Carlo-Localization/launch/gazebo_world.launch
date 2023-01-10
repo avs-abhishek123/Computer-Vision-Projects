@@ -1,0 +1,18 @@
+<launch>
+  <arg name="world_name" default="mcl"/>
+  <arg name="enable_gui" default="true"/>
+  <arg name="enable_headless" default="false"/>
+  
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find estimation_assignment)/resources/$(arg world_name).world"/>
+    <arg name="debug" value="false"/>
+    <arg name="paused" value="false"/>
+    <arg name="headless" value="$(arg enable_headless)"/>
+    <arg name="gui" value="$(arg enable_gui)"/>
+  </include>
+
+  <node pkg="tf" type="static_transform_publisher" name="map_to_world" args="0 0 0 0 0 0 world map 100"
+        output="screen">       
+  </node> 
+</launch>

@@ -1,0 +1,20 @@
+fmx_left: 9.842439e+02
+fmy_left: 9.808141e+02
+cx_left:  6.900000e+02
+cy_left:  2.331966e+02
+
+fmx_right: 9.895267e+02
+fmy_right: 9.878386e+02
+cx_right:  7.020000e+02
+cy_right:  2.455590e+02
+
+baseline: 0.537
+
+min_valid_disparity_in_pixels: 0
+max_valid_disparity_in_pixels: 500
+
+min_valid_depth_in_meters: 0.5
+max_valid_depth_in_meters: 50
+
+patch_size: 64
+step: 10

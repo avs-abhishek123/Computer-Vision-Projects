@@ -1,0 +1,40 @@
+<launch>
+  <arg name="laser_enabled" default="true"/>
+  <arg name="ur5_enabled" default="false"/>
+  <arg name="kinect_enabled" default="false"/>
+  <arg name="husky_name" default="husky"/>
+  <arg name="odometry_noise_std_dev" default="0.0"/>
+  
+  
+  <group ns="$(arg husky_name)_1">
+      <arg name="xinit"  default="0.0" />
+      <arg name="yinit"  default="0.0" />
+      <arg name="zinit"  default="0.3" />
+      
+      <include file="$(find estimation_assignment)/launch/spawn_husky.launch">
+           <arg name="laser_enabled" value="$(arg laser_enabled)"/>
+           <arg name="ur5_enabled" value="$(arg ur5_enabled)"/>
+           <arg name="kinect_enabled" value="$(arg kinect_enabled)"/>
+           <arg name="x" value="$(arg xinit)"/>
+           <arg name="y" value="$(arg yinit)"/>
+           <arg name="z" value="$(arg zinit)"/>
+           <arg name="robot_name" value="$(arg husky_name)_1"/>
+           <arg name="tf_prefix" value="$(arg husky_name)_1"/>
+           <arg name="odometry_noise_std_dev" value="$(arg odometry_noise_std_dev)"/>
+     </include>
+
+     <include file="$(find estimation_assignment)/launch/teleop.launch">
+           <arg name="joy_dev" value="/dev/input/js0"/>
+           <arg name="joystick" value="true"/>   
+     </include>
+        
+     <node pkg="tf" type="static_transform_publisher" name="$(arg husky_name)_1_odom_to_world" 
+           args="$(arg xinit) $(arg yinit) $(arg zinit) 0 0 0 map $(arg husky_name)_1/odom 100" output="screen" />
+
+  </group>
+
+  <!-- This should only be activated if we want the ground truth odometry to be used instead of robot_localization in control.launch -->
+ <node pkg="estimation_assignment" type="ground_truth_tf_publisher.py" name="estimation_assignment" output="screen" />
+
+
+</launch>

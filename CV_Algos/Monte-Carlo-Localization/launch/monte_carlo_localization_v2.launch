@@ -1,0 +1,14 @@
+<launch>
+
+   <node pkg="estimation_assignment" type="monte_carlo_localization_v2.py" output="screen" name="monte_carlo_localization">
+         <param name="map_file" value="$(find estimation_assignment)/resources/mcl.pkl" />
+         <param name="dynamics_translation_noise_std_dev"    value="0.45" />
+         <param name="dynamics_orientation_noise_std_dev"    value="0.03" />
+         <param name="beam_range_measurement_noise_std_dev"  value="0.3" />     
+   </node>
+
+   <include file="$(find estimation_assignment)/launch/occupancy_grid_reader.launch" >
+        <arg name="occupancy_grid_filename"  value="$(find estimation_assignment)/resources/mcl.pkl"/>
+   </include>
+
+</launch>

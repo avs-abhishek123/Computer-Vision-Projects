@@ -1,0 +1,7 @@
+<launch>
+    <arg name="occupancy_grid_filename" />    
+
+    <node pkg="estimation_assignment" type="occupancy_grid_publisher.py" name="occupancy_grid_reader">
+          <param name="occupancy_grid_filename" value="$(arg occupancy_grid_filename)" />
+    </node>      
+</launch>

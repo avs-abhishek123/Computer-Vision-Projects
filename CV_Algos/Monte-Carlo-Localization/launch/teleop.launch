@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="joy_dev" default="/dev/input/js0" />
+  <arg name="joystick" default="true" />
+  <arg name="config" default="teleop.yaml" />
+
+  <group ns="joy_teleop">
+
+    <rosparam command="load" file="$(find estimation_assignment)/resources/$(arg config)" />
+
+    <node pkg="joy" type="joy_node" name="joy_node">
+      <param name="dev" value="$(arg joy_dev)" />
+    </node>
+
+    <node pkg="teleop_twist_joy" type="teleop_node" name="teleop_twist_joy"/>
+  </group>
+
+</launch>

@@ -1,0 +1,7 @@
+/simulator/follower/max_v: 2                 # m/sec, max linear speed
+/simulator/follower/max_w: 1.57              # rad/sec, max angular speed
+/simulator/follower/max_sensor_range: 8      # m
+
+
+/simulator/target/max_v: 2                # m/sec, max linear speed
+/simulator/target/max_w: 1.57             # rad/sec, max angular speed
