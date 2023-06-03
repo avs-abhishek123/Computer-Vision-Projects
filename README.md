@@ -1,3 +1,3 @@
 # Computer Vision Projects
 
-Work in progress
+Work in progress.
