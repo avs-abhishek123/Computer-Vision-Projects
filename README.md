@@ -55,6 +55,8 @@
 | | Video2frames.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/Video_to_gif_or_frames) |
 | videos | Videos | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/videos) |
 | FPS-display-webcam | FPS-display-webcam.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/FPS-display-webcam.py) |
+| Real_time_angle_detector | Real_time_angle_detector.py | [Link]() |
+
 
 <hr>
 
