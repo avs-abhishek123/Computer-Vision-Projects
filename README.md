@@ -58,7 +58,7 @@
 | Real_time_angle_detector | Real_time_angle_detector.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/blob/main/Real_time_angle_detector) |
 | Live_Pose_Detector | Live-Pose-Detector.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/Live_Pose_Detector) |
 | Live_QR_Code_Reader | Live_QR_Code_Reader.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/Live_QR_Code_Reader) |
-
+| Real_Time_Sudoku_Solver | Real_Time_Sudoku_Solver.py | [Link]() |
 
 <hr>
 
