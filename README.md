@@ -56,7 +56,7 @@
 | videos | Videos | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/videos) |
 | FPS-display-webcam | FPS-display-webcam.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/FPS-display-webcam.py) |
 | Real_time_angle_detector | Real_time_angle_detector.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/blob/main/Real_time_angle_detector) |
-| Live_Pose_Detector | Live-Pose-Detector.py | [Link]() |
+| Live_Pose_Detector | Live-Pose-Detector.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/Live_Pose_Detector) |
 
 
 <hr>
