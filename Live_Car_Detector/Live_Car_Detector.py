@@ -1,7 +1,7 @@
 import cv2
 
 # Load the cascade classifier for car detection
-car_cascade = cv2.CascadeClassifier('cars.xml')
+car_cascade = cv2.CascadeClassifier('Live_Car_Detector/cars.xml')
 
 # Initialize the video capture
 cap = cv2.VideoCapture(0)
