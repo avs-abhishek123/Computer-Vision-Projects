@@ -60,7 +60,7 @@
 | Live_QR_Code_Reader | Live_QR_Code_Reader.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/Live_QR_Code_Reader) |
 | Real_Time_Sudoku_Solver | Real_Time_Sudoku_Solver.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/Real_Time_Sudoku_Solver) |
 | Real_Time_Object_Detection | Real_Time_Object_Detection.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/Real_Time_Object_Detection) |
-
+| Manual_labelling | Manual_labelling.py | [Link]() |
 <hr>
 
 ### Work in progress.
