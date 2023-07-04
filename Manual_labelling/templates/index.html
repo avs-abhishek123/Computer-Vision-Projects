@@ -1,0 +1,204 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Manual Labeling</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Manual Labeling</h1>
+    <div>
+        <button id="labelButton" onclick="label()">Label</button>
+    </div>
+    <div>
+        <video id="video" width="640" height="640"></video>
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+    <script>
+      var canvas = document.getElementById("canvas");
+      var context = canvas.getContext("2d");
+
+      // Connect to the video stream
+      var socket = new WebSocket("ws://" + location.host + "/video_stream");
+
+      socket.onmessage = function (event) {
+        var image = new Image();
+        image.onload = function () {
+          canvas.width = image.width;
+          canvas.height = image.height;
+          context.clearRect(0, 0, canvas.width, canvas.height);
+          context.drawImage(image, 0, 0, canvas.width, canvas.height);
+        };
+        image.src = "data:image/jpeg;base64," + event.data;
+      };
+        // Get video element
+        const videoElement = document.getElementById('video');
+
+        // Get access to webcam stream
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then((stream) => {
+                videoElement.srcObject = stream;
+            })
+            .catch((error) => {
+                console.error('Error accessing webcam:', error);
+            });
+
+        // Labeling function
+        function label() {
+            const canvas = document.createElement('canvas');
+            canvas.width = 640;
+            canvas.height = 480;
+            const context = canvas.getContext('2d');
+            context.drawImage(videoElement, 0, 0, 640, 640);
+            const image = canvas.toDataURL();
+
+            const boundingBox = {
+                xmin: 100,  // Example coordinates, replace with actual values
+                ymin: 100,  // Example coordinates, replace with actual values
+                xmax: 200,  // Example coordinates, replace with actual values
+                ymax: 200,  // Example coordinates, replace with actual values
+                label: 'example label'  // Replace with actual label
+            };
+
+            // Send the bounding box coordinates and label to the API endpoint
+            $.post('/api/label', boundingBox, function(response) {
+                if (response.success) {
+                    console.log('Label saved:', response.label_filename);
+                }
+            });
+        }
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manual Labeling</title>
+    <style>
+        #videoContainer {
+            position: relative;
+            width: 640px;
+            height: 640px;
+        }
+
+        #video {
+            width: 100%;
+            height: 100%;
+        }
+
+        #boundingBox {
+            position: absolute;
+            border: 2px solid red;
+            pointer-events: none;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Manual Labeling</h1>
+
+    <div id="videoContainer">
+        <video id="video" autoplay width="640" height="640"></video>
+        <div id="boundingBox"></div>
+    </div>
+    <div>
+        <button id="labelButton" onclick="label_api()">Label</button>
+    </div>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+        // Connect to the video stream
+        var socket = new WebSocket("ws://" + location.host + "/video_stream");
+
+        socket.onmessage = function (event) {
+            var image = new Image();
+            image.onload = function () {
+                canvas.width = image.width;
+                canvas.height = image.height;
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.drawImage(image, 0, 0, canvas.width, canvas.height);
+            };
+            image.src = "data:image/jpeg;base64," + event.data;
+        };
+
+        // Get video element
+        const videoElement = document.getElementById('video');
+
+        // Get access to webcam stream
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then((stream) => {
+                videoElement.srcObject = stream;
+            })
+            .catch((error) => {
+                console.error('Error accessing webcam:', error);
+            });
+
+        // Variables to store the bounding box coordinates
+        var boundingBoxX = 0;
+        var boundingBoxY = 0;
+        var isDrawing = false;
+
+        // Event listeners for mouse interactions on the video container
+        document.getElementById('videoContainer').addEventListener('mousedown', function(event) {
+            var boundingBoxElement = document.getElementById('boundingBox');
+            var rect = videoElement.getBoundingClientRect();
+            var x = event.clientX - rect.left;
+            var y = event.clientY - rect.top;
+            boundingBoxX = x;
+            boundingBoxY = y;
+            boundingBoxElement.style.left = boundingBoxX + 'px';
+            boundingBoxElement.style.top = boundingBoxY + 'px';
+            isDrawing = true;
+        });
+
+        document.getElementById('videoContainer').addEventListener('mousemove', function(event) {
+            var boundingBoxElement = document.getElementById('boundingBox');
+            if (isDrawing) {
+                var rect = videoElement.getBoundingClientRect();
+                var x = event.clientX - rect.left;
+                var y = event.clientY - rect.top;
+                var width = x - boundingBoxX;
+                var height = y - boundingBoxY;
+                boundingBoxElement.style.width = width + 'px';
+                boundingBoxElement.style.height = height + 'px';
+            }
+        });
+
+        document.getElementById('videoContainer').addEventListener('mouseup', function() {
+            isDrawing = false;
+        });
+
+        // Labeling function
+        function label() {
+            const canvas = document.createElement('canvas');
+            canvas.width = 640;
+            canvas.height = 480;
+            const context = canvas.getContext('2d');
+            context.drawImage(videoElement, 0, 0, 640, 640);
+            const image = canvas.toDataURL();
+
+            const boundingBox = {
+                xmin: boundingBoxX,
+                ymin: boundingBoxY,
+                xmax: boundingBoxX + parseInt(boundingBoxElement.style.width),
+                ymax: boundingBoxY + parseInt(boundingBoxElement.style.height),
+                label: 'example label' // Replace with actual label
+            };
+
+            // Send the bounding box coordinates and label to the API endpoint
+            $.post('/api/label', boundingBox, function(response) {
+                if (response.success) {
+                    console.log('Label saved:', response.label_filename);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
