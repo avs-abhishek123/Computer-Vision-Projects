@@ -39,7 +39,7 @@ count_frame = 0
 # face Detection
 detector = dlib.get_frontal_face_detector()
 landmark_predict = dlib.shape_predictor(
-	'Model/shape_predictor_68_face_landmarks.dat')
+	'Eye_and_Blink_Detection/data/shape_predictor_68_face_landmarks.dat')
 while 1:
 
 	# If the video is finished then reset it
