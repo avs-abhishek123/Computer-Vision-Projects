@@ -63,8 +63,8 @@
 | Manual_labelling | Manual_labelling.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/Manual_labelling) |
 | Live_Car_Detector | Live_Car_Detector.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/Live_Car_Detector) |
 | Live_Image_Cartoonifier | Live_Image_Cartoonifier.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/Live_Image_Cartoonifier) |
-| Eye_and_Blink_Detection | Blink_Detection.py | [Link]() |
-|  | Eye_Detection.py | [Link]() |
+| Eye_and_Blink_Detection | Blink_Detection.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/Eye_and_Blink_Detection) |
+|  | Eye_Detection.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/Eye_and_Blink_Detection) |
 
 <hr>
 
