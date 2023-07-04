@@ -61,6 +61,9 @@
 | Real_Time_Sudoku_Solver | Real_Time_Sudoku_Solver.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/Real_Time_Sudoku_Solver) |
 | Real_Time_Object_Detection | Real_Time_Object_Detection.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/Real_Time_Object_Detection) |
 | Manual_labelling | Manual_labelling.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/Manual_labelling) |
+| Live_Car_Detector | Live_Car_Detector.py | [Link]() |
+| Live_Image_Cartoonifier | Live_Image_Cartoonifier.py | [Link]() |
+
 <hr>
 
 ### Work in progress.
