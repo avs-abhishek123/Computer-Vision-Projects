@@ -65,6 +65,7 @@
 | Live_Image_Cartoonifier | Live_Image_Cartoonifier.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/Live_Image_Cartoonifier) |
 | Eye_and_Blink_Detection | Blink_Detection.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/Eye_and_Blink_Detection) |
 |  | Eye_Detection.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/Eye_and_Blink_Detection) |
+| Live_Ball_Tracking | Live_Ball_Tracking.py | [Link]() |
 
 <hr>
 
