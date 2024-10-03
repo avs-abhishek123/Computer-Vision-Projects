@@ -1,5 +1,7 @@
 # Computer Vision Projects
 
+*keep supporting this repository with stars that will encourage me to add more!*
+
 | Project Name | Contents | Link |
 |---|---|---|
 | Blur_detection | Blur_detection_using_laplacian.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/Blur_detection) |
