@@ -2,6 +2,16 @@
 
 *keep supporting this repository with stars that will encourage me to add more!*
 
+## Star History
+
+<a href="https://www.star-history.com/?repos=avs-abhishek123%2FComputer-Vision-Projects&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=avs-abhishek123/Computer-Vision-Projects&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=avs-abhishek123/Computer-Vision-Projects&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=avs-abhishek123/Computer-Vision-Projects&type=date&legend=top-left" />
+ </picture>
+</a>
+
 | Project Name | Contents | Link |
 |---|---|---|
 | Blur_detection | Blur_detection_using_laplacian.py | [Link](https://github.com/avs-abhishek123/Computer-Vision-Projects/tree/main/Blur_detection) |
